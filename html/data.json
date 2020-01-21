@@ -1,0 +1,99 @@
+[
+  {
+    "name":"Villa Suite",
+    "image": "../img/searchImg/boreyA.jpg",
+    "link":"baoutside.html",
+    "location":"In the front"
+  },
+  {
+    "name":"Villa Suite",
+    "image": "../img/searchImg/boreyA2.jpg",
+    "link":"bainsidea.html",
+    "location":"Living Room"
+  },
+  {
+    "name":"Villa Suite",
+    "image": "../img/searchImg/boreyA3.jpg",
+    "link":"barooma.html",
+    "location":"Bedrooom A"
+  },
+  {
+    "name":"Villa Suite",
+    "image": "../img/searchImg/boreyA6.jpg",
+    "link":"baroomb.html",
+    "location":"Bedroom B"
+  },
+  {
+    "name":"Villa Jusmine",
+    "image": "../img/searchImg/boreyR.jpg",
+    "link":"broutside.html",
+    "location":"Front"
+  },
+  {
+    "name":"Villa Jusmine",
+    "image": "../img/searchImg/boreyR1.jpg",
+    "link":"brinsideb.html",
+    "location":"Bedroom"
+  },
+  {
+    "name":"Bungalow",
+    "image": "../img/searchImg/bungalow.jpg",
+    "link":"bungalow.html",
+    "location":"Front"
+  },
+  {
+    "name":"Bungalow",
+    "image": "../img/searchImg/bungalow3.jpg",
+    "link":"bungalowin.html",
+    "location":"Bedroom"
+  },
+  {
+    "name":"Camping",
+    "image": "../img/searchImg/camping1.jpg",
+    "link":"camping.html",
+    "location":"Outside"
+  },
+  {
+    "name":"Khmer Cottage",
+    "image": "../img/searchImg/khcottage.jpg",
+    "link":"khcottage.html",
+    "location":"Outside"
+  },
+  {
+    "name":"Khmer Cottage",
+    "image": "../img/searchImg/khcottage1.jpg",
+    "link":"khcottagein.html",
+    "location":"Bedroom"
+  },
+  {
+    "name":"Luxury Tent",
+    "image": "../img/searchImg/lxtent.jpg",
+    "link":"lxtent.html",
+    "location":"Front"
+  },
+  {
+    "name":"Luxury Tent",
+    "image": "../img/searchImg/lxtent1.jpg",
+    "link":"lxtentin.html",
+    "location":"Bedroom"
+  },
+  {
+    "name":"Pine Room",
+    "image": "../img/searchImg/pineroom.jpg",
+    "link":"pineroom.html",
+    "location":"Front"
+  },
+  {
+    "name":"Pine Room",
+    "image": "../img/searchImg/pineroom1.jpg",
+    "link":"pinerooma.html",
+    "location":"Inside"
+  },
+  {
+    "name":"Pine View Kitchen",
+    "image": "../img/searchImg/resterant.jpg",
+    "link":"resterant.html",
+    "location":"Front"
+  }
+
+]

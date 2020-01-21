@@ -1,0 +1,189 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>A-Frame Mouse Cursor Component - Basic</title>
+   
+	  <script src="https://mayognaise.github.io/aframe-mouse-cursor-component/build.js"></script>
+	  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  	 <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+	 <link href="../css/mfb.css" rel="stylesheet">
+    <script src="../js/mfb.js"></script>
+	<script src="../js/fbplugin.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../common.css"/>
+	
+	<style>
+	
+	
+	/*facebook*/
+.facebook{
+	
+	margin-left: 24%;
+}
+ 
+
+/*----start-wrap-----*/
+.wrap{
+	height:16%;
+	margin:0 auto;
+}
+
+/*----start-header-----*/
+.header{
+	background:#352f2f;
+	border-bottom:2px solid #bd7f1c;
+}
+
+.logo{
+	float:left;
+	padding-left:70px;
+	padding-top:10px;
+}
+.detail a {
+	color : #616161;
+}
+.detail a:hover {
+	color : #BDBDBD;
+	transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+}
+.social-icons{
+	float:right;
+	margin-top: 0.6%;
+}
+.social-icons ul li{
+	display:inline-block;
+}
+.social-icons ul li a{
+	color:white;
+	font-family: 'Open Sans', 'khmer-os', sans-serif,'MS PGothic', 'メイリオ';
+	font-size:0.875em;
+}
+.social-icons ul li a:hover{
+	color:#bd7f1c;
+}
+.social-icons ul li a img{
+	vertical-align:middle;
+	padding-right: 5px;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.social-icons ul li a img:hover {
+	opacity: 0.4;
+}
+.a-scene
+	{
+		height:84%;
+		margin:0px;
+	}
+#book-button
+{
+	padding-right:30px;
+}
+#welcome
+{
+	margin:0px;
+	padding-right:100px;
+	color:white;
+
+}
+	</style>
+  </head>
+  <body>
+ 
+  
+  <div class="header">
+        <div class="wrap">
+            <div class="top-header">
+                <div class="logo">
+                    <a href="http://www.vkirirom.com/en/index.php"><img src="../img/vKirirom.svg " alt="vkirirom" title="logo" /></a>
+                </div>
+                <div class="social-icons">
+                    <ul>
+					
+                        <li>
+                            <a href="https://www.facebook.com/vkirirom" target="_blank"><img src="../img/facebook.svg" alt="www.facebook.com" title="facebook" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCCIu3JTn0s4UX5Kze5Hse0g" target="_blank"><img src="../img/youtube.svg" alt="www.youtube.com" title="youtube" /></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/vkirirom/" target="_blank"><img src="../img/instagram.svg" alt="www.instagram.com" title="instagram" /></a>
+                        </li>
+                        <li>
+                            <a href="https://vkirirom.live" target="_blank"><img src="../img/blog-icon.png" alt="www.vkirirom.live" title="blog" /></a>
+                        </li>
+                        <li id="book-button"><a href="http://www.vkirirom.com/en/reservation.php">BOOK NOW</a></li>
+                    </ul>
+					<div class="facebook">
+                        <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/vkirirom" data-width="250" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=459721630705685&amp;container_width=164&amp;href=https%3A%2F%2Fwww.facebook.com%2Fvkirirom&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;width=250"><span style="vertical-align: bottom; width: 116px; height: 20px;"><iframe name="f1bf9068b8" width="250px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.3/plugins/like.php?action=like&amp;app_id=459721630705685&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FZ2duorNoYeF.js%3Fversion%3D42%23cb%3Dfef4306e8%26domain%3Dwww.vkirirom.com%26origin%3Dhttp%253A%252F%252Fwww.vkirirom.com%252Ff158dd5fec%26relation%3Dparent.parent&amp;container_width=164&amp;href=https%3A%2F%2Fwww.facebook.com%2Fvkirirom&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;width=250" class="" style="border: none; visibility: visible; width: 116px; height: 20px;"></iframe></span></div>
+                    </div>
+                </div>
+                <div class="clear"> </div>
+            </div>
+			</div>
+			</div>
+						
+	
+    <a-scene class="a-scene">
+
+		<a-box position="-10 1.5 0" rotation="30 30 0" color="#90EE90" 
+	  		 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/outside.html'"
+             event-set__enter="_event: mouseenter;visible:true;_target:#a;"
+             event-set__leave="_event: mouseleave;visible:false;_target:#a;">
+		</a-box> 
+	    <a-box position="10 1.5 -10" rotation="30 30 0" color="#90EE90" 
+	  		 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/inside2.html'">
+		</a-box>
+
+		<a-box position="10 1.5 11" rotation="30 30 0" color="#90EE90" 
+	  		 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/room1.html'"
+             event-set__enter="_event: mouseenter;visible:true;_target:#b;"
+             event-set__leave="_event: mouseleave;visible:false;_target:#b;">
+        </a-box>
+	  
+		<a-box position="3 1.5 17" rotation="-45 30 0" color="#90EE90" 
+	  		 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/room2.html'"
+           	 event-set__enter="_event: mouseenter;visible:true;_target:#d;"
+             event-set__leave="_event: mouseleave;visible:false;_target:#d;">
+        </a-box>
+
+		<a-assets>
+			<img id="inside" src="../img/BA-3D-Inside1.jpg">
+		</a-assets>
+		<a-sky  src="#inside"></a-sky>
+
+		<a-entity position="0 1.8 4">
+			<a-entity camera look-controls mouse-cursor>
+				<a-cursor fuse="true" color="yellow" id="c"></a-cursor>
+				<a-image src="../img/BoreyAFront-08.png"  position="0.7 0.34 -0.8" rotation="0 0 0"  id="a" visible="false" width="0.9px" height="0.6px"
+				 event-set__enter="_event: mouseenter;visible:true;_target:#a;"
+				 event-set__leave="_event: mouseleave;visible:false;_target:#a;"
+				 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/outside.html'">
+				</a-image>
+				<a-entity position="5 0.34 -0.8" rotation="0 0 0" geometry="primitive: plane; width: auto; height: auto" material="color: #eee" text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; " id="a" visible="false"
+				 event-set__enter="_event: mouseenter;visible:true;_target:#a;"
+				 event-set__leave="_event: mouseleave;visible:false;_target:#a;"
+				 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/outside.html'">
+        		</a-entity>
+				<a-image src="../img/Artboard4.png"  position="0.7 0.34 -0.8" rotation="0 0 0"  id="b" visible="false" width="0.9px" height="0.6px"
+				 event-set__enter="_event: mouseenter;visible:true;_target:#b;"
+				 event-set__leave="_event: mouseleave;visible:false;_target:#b;"
+				  onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/room1.html'">
+				</a-image>
+				<a-image src="../img/Artboard10.png"  position="0.7 0.34 -0.8" rotation="0 0 0"  id="d" visible="false" width="0.9px" height="0.6px"
+				 event-set__enter="_event: mouseenter;visible:true;_target:#d;"
+				 event-set__leave="_event: mouseleave;visible:false;_target:#d;"
+				 onClick="location.href='file:///C:/Users/A2A%20Town/Desktop/demo360/examples/basic/html/room2.html'">
+				</a-image>
+			</a-entity>
+		
+      </a-entity>
+    </a-scene>
+
+  </body>
+</html>

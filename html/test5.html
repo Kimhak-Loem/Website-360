@@ -1,0 +1,29 @@
+<html>
+  	<head>
+		<title>Inside Page</title>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <script src="../js/aframe-master.js"></script>
+	    <script src="../js/aframe-master.min.js"></script>
+	    <script src="../js/build.js"></script>
+	    <script src="../js/aframe-mouse-cursor-component.min.js"></script>
+	    <script src="../js/aframe-touch-rotation-controls.min.js"></script>
+
+
+	</head>
+	<body>
+		
+		<a-scene>
+			<a-entity camera="zoom:0.5" look-controls="reverseMouseDrag: true" wasd-controls="enabled:true">
+				<a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1"
+				material="color: gray; opacity: 0.5"></a-entity>
+			</a-entity>
+
+			<a-assets>
+				<img id="sky" src="../img/3dimg/bungalow.jpg">
+			</a-assets>
+			<a-sky  src="#sky"></a-sky>
+		</a-scene>
+	</body>
+</html>

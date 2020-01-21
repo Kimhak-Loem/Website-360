@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" manifest="manifest/cache.manifest">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff7e10">
+  <meta name="apple-mobile-web-app-title" content="Precision Experience">
+  <meta name="application-name" content="Precision Experience">
+  <meta name="theme-color" content="#ff7e10">
+  <meta charset="UTF-8">
+  <title>Mifa, Experience Precision</title>
+  <script src="js/aframe.min.js"></script>
+  <script src="js/aframe-text-component.min.js"></script>
+  <script src="js/aframe-layout-component.min.js"></script>
+  <script src="js/nunjucks.min.js"></script>
+  <script src="js/aframe-template-component.min.js"></script>
+  <script src="shaders/lines.js"></script>
+</head>
+<body>
+  <!-- version 11-11-2016 11:09 -->
+  <a-scene fog="type:linear; color:#fff; near:10; far:50">
+    <a-assets>
+      <img id="sky" src="img/sky.png" />
+      <img id="moon" src="img/moonmap1k.jpg" />
+      <a-asset-item id="ground-obj" src="objects/ground.obj"></a-asset-item>
+      <a-asset-item id="mifa-logo-obj" src="objects/mifa-logo.obj"></a-asset-item>
+      <a-asset-item id="mifa-logo-mtl" src="objects/mifa-logo.mtl"></a-asset-item>
+      <a-asset-item id="p48226" src="objects/48226.obj"></a-asset-item>
+      <a-asset-item id="p37368" src="objects/37368.obj"></a-asset-item>
+      <a-asset-item id="p38002" src="objects/38002.obj"></a-asset-item>
+      <a-asset-item id="p37774_48165" src="objects/37774-48165.obj"></a-asset-item>
+      <a-asset-item id="p61396_01" src="objects/61396_01.obj"></a-asset-item>
+      <a-asset-item id="p23252" src="objects/23252_00.obj"></a-asset-item>
+      <img id="p48226_info" src="img/p48226.png" />
+      <img id="p37368_info" src="img/p37368.png" />
+      <img id="p38002_info" src="img/p38002.png" />
+      <img id="p37774_48165_info" src="img/p37774_48165.png" />
+      <img id="p61396_01_info" src="img/p61396_01.png" />
+      <img id="p23252_info" src="img/p23252.png" />
+      
+      
+      <a-mixin id="hoverbox" class="hoverbox" material="color:#fff; opacity:.01;" geometry="primitive: plane; width:.7; height:1.5;" rotation="0 0 0" position="0 0 -.4"></a-mixin>
+      <a-mixin id="h1" text="size:0.04; height:0.003" material="shader:flat; color:#000;"></a-mixin>
+      <a-mixin id="h2" text="size:0.03; height:0.003" material="shader:flat; color:#000;"></a-mixin>
+      
+      <!-- Template -->
+      <script id="hoverobject" type="text/x-nunjucks-template">
+        <a-entity class="hover">
+          <a-entity mixin="hoverbox"></a-entity>
+          <a-obj-model src="{{ src }}" mixin="skybox" position="0 0 0" scale="0.01 0.01 0.01">
+            <a-animation attribute="rotation" dur="20000" easing="linear" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+            <a-animation attribute="position" dur="300" to="0 0 .4" begin="hoveron"></a-animation>
+            <a-animation attribute="position" dur="300" to="0 0 0" begin="hoveroff"></a-animation>
+          </a-obj-model>
+          <a-entity class="profile-text" rotation="0 0 0" position="0 .3 .8" visible="true">
+            <a-plane width=".5" height=".25" material="envMap: #skybox1;opacity:0.99; color:#fff; metalness:0.3; roughness:0.5; src:{{ src }}_info"></a-plane>
+          </a-entity>
+        </a-entity>
+      </script>
+    </a-assets>
+
+    <!-- set up the environment -->
+    <a-entity light="type: ambient; color: #fff; intensity: 0.8"></a-entity>
+    <a-entity position="0 0 0" rotation="0 180 0">
+      <a-entity camera="userHeight:1.6" look-controls wasd-controls>
+        <a-entity cursor="fuse:true, fuseTimeout: 50;" raycaster="far: 20; objects: .hoverbox"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="environment">
+      <a-light type="directional" color="#fff" position="0 .5 .5" intensity=".25"></a-light>
+      <a-sky material="fog:false; src:#sky;">
+      </a-sky>
+      <a-animation attribute="rotation" to="0 360 0" dur="8640000" easing="linear" repeat="indefinite"></a-animation>
+    </a-entity>
+
+
+    <!-- the moon -->
+    <a-sphere position="5 40 0" radius="1" material="fog:false; src:#moon; color:#bbb; metalness:.2; roughness: 0.8;">
+      <a-animation attribute="rotation" to="360 0 0" dur="8640000" easing="linear" repeat="indefinite"></a-animation>
+    </a-sphere>
+
+
+    <!-- Object and hover image -->
+    <a-entity id="objects" layout="type: circle; radius: 1.4" position="0 .8 0" rotation="0 0 0">
+      <a-entity template="src: #hoverobject" data-src="#p48226"
+      data-title="Complexity:"
+      data-line1="20 cores in 1 profile"
+      data-line2="Wall thickness 0,7 mm"
+      data-line3="Diameter hole 0,8 mm"
+      rotation="0 270 0">
+      </a-entity>
+      <a-entity template="src: #hoverobject" data-src="#p37368"
+      data-title="Functional precision:"
+      data-line1="10 functions in one design"
+      data-line2="Precision tolerances +/- 0,02 mm"
+      data-line3=""
+      rotation="0 210 0">
+      </a-entity>
+      <a-entity template="src: #hoverobject" data-src="#p38002"
+      data-title="Variations:"
+      data-line1="Wall thickness variations 0,85 – 4,8 mm"
+      data-line2="Small hole  1,5 +/- 0,1  mm"
+      data-line3=""
+      rotation="0 150 0">
+      </a-entity>
+      <a-entity template="src: #hoverobject" data-src="#p37774_48165"
+      data-title="Click Design:"
+      data-line1="Click function to assemble 2 profiles"
+      data-line2="Radius accuracy of +/- 0,05 mm"
+      data-line3=""
+      rotation="0 90 0">
+      </a-entity>
+      <a-entity template="src: #hoverobject" data-src="#p61396_01"
+      data-title="Functionality:"
+      data-line1="10 functional features integrated into 1 design"
+      data-line2="Co-Engineering"
+      data-line3=""
+      rotation="0 30 0">
+      </a-entity>
+      <a-entity template="src: #hoverobject" data-src="#p23252"
+      data-title="Miniature Precision:"
+      data-line1="Width 10 +/-0,05 mm"
+      data-line2="Height 1,82 +/-0,03 mm"
+      data-line3="Wall thickness 0,25 mm"
+      rotation="0 -30 0">
+      </a-entity>
+    </a-entity>
+
+    <!-- the 3 Mifa logos next to the other objects -->
+    <a-entity id="links" layout="type: circle; radius: 7" position="0 0.4 0" rotation="0 30 0">
+      <a-obj-model src="#mifa-logo-obj" mtl="#mifa-logo-mtl" scale="0.01 0.01 0.001" rotation="0 -90 0"></a-obj-model>
+      <a-obj-model src="#mifa-logo-obj" mtl="#mifa-logo-mtl" scale="0.01 0.01 0.001" rotation="0 150 0"></a-obj-model>
+      <a-obj-model src="#mifa-logo-obj" mtl="#mifa-logo-mtl" scale="0.01 0.01 0.001" rotation="0 30 0"></a-obj-model>
+    </a-entity>
+
+  <a-cylinder color="#666" height="0.05" radius="1" rotation="0 0 0" position="0 0.001 0" segments-radial="64" mixin="skybox"></a-cylinder>
+</a-scene>
+
+<script type="text/javascript">
+var scene = document.querySelector('a-scene');
+if (scene.hasLoaded) {
+  run();
+} else {
+  scene.addEventListener('loaded', run);
+}
+
+function run () {
+  var hoverEls = scene.querySelectorAll('.hover');
+  for (var i = 0; i < hoverEls.length; i++) {
+    var hoverEl = hoverEls[i];
+    hoverElBox = hoverEl.querySelector('a-entity');
+    hoverElBox.addEventListener('raycaster-intersected', function(evt) {
+      if (this.hoveron !== true) {
+        var parent = evt.target.parentNode;
+        var next = evt.target.nextElementSibling;
+        next.emit('hoveron');
+        parent.querySelector('.profile-text').setAttribute('visible', true);
+        this.hoveron = true;
+      }
+    }, true);
+    hoverElBox.addEventListener('raycaster-intersected-cleared', function(evt) {
+      var parent = evt.target.parentNode;
+      var next = evt.target.nextElementSibling;
+      next.emit('hoveroff');
+      parent.querySelector('.profile-text').setAttribute('visible', false);
+      this.hoveron = false;
+    }, true);
+  }
+}
+</script>
+</body>
+</html>

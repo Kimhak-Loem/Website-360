@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+		<title>Luxury Tent, Inside</title>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../js/aframe-master.min.js"></script>
+        <script src="../js/aframe-mouse-cursor-component.min.js"></script>
+        <script src="../js/aframe-event-set-component.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+	    	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+	    	crossorigin="anonymous">
+	    </script>
+        <script src="../js/uikit.min.js"></script>
+        <script src="../js/uikit-icons.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="../js/myjs.js"></script>
+		<link rel="stylesheet" href="../css/uikit.min.css" />
+        <link href="../css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
+  	</head>
+  	<body>
+	
+  	<div class="header">
+		<nav class="uk-navbar-container" uk-navbar>
+			<div class="uk-navbar-center">
+			  	<p class="title" style="margin: 0;">Luxury Tent, Inside</p>
+			</div>
+			<div class="logo uk-navbar-left uk-padding-remove">
+				<ul class="uk-navbar-nav">
+					<li><a href="../html/resterant.html"><img class="uk-padding-remove" src="../img/vKirirom.svg " alt="vkirirom" title="logo" width="70" /></a></li>
+				</ul>
+			</div>
+			
+			<div class="uk-navbar-right">
+				<ul class="icon uk-navbar-nav">
+					<li class="uk-visible@s">
+						<a class="aa" href="https://www.facebook.com/vkirirom" target="_blank"><img src="../img/facebook.svg" alt="www.facebook.com" title="facebook" /></a>
+					</li>
+					<li class="uk-visible@s">
+						<a class="aa" href="https://www.youtube.com/channel/UCCIu3JTn0s4UX5Kze5Hse0g" target="_blank"><img src="../img/youtube.svg" alt="www.youtube.com" title="youtube" /></a>
+					</li>
+					<li class="uk-visible@s">
+						<a class="aa" href="https://www.instagram.com/vkirirom/" target="_blank"><img src="../img/instagram.svg" alt="www.instagram.com" title="instagram" /></a>
+					</li>
+					<li class="uk-visible@s">
+						<a class="aa" href="https://vkirirom.live" target="_blank"><img src="../img/blog-icon.png" alt="www.vkirirom.live" title="blog" /></a>
+					</li>
+					<li>
+						<div>
+				            <a class="uk-navbar-toggle" href="#" uk-search-icon></a>
+				            <div class="uk-navbar-dropdown" uk-drop="mode: click; ">
+				                <div class="uk-grid-small uk-flex-middle" uk-grid>
+				                    <div class="uk-width-expand">
+				                        <form class="uk-search uk-search-default uk-width-1-1">
+				                            <a href="" class="uk-search-icon-flip" uk-search-icon></a>
+				                            <input class="uk-search-input" name="search" id="search" type="search" placeholder="Search..." autofocus>
+				                        </form>
+				                    </div>
+				                    <div class="uk-width-auto">
+				                        <a class="uk-navbar-dropdown-close" href="#" uk-close></a>
+				                    </div>
+				                </div>
+				                <ul class="list-group" id="result"></ul>
+				            </div>
+				        </div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+						
+	<div class="body uk-inline">
+		<a-scene>
+			<a-assets>
+				<img id="sky" src="../img/3dimg/luxury1.jpg">
+				<img id="check" src="../img/check.svg">
+			</a-assets>
+			<a-sky  src="#sky"></a-sky>
+			<a-image src="#check" position="1 1 5" rotation="0 50 0"
+				onClick="location.href='../html/lxtent.html'"
+	            event-set__enter="_event: mouseenter;visible:true;_target:#a;"
+	            event-set__leave="_event: mouseleave;visible:false;_target:#a;">
+	        </a-image>
+	        <a-image src="#check" position="-5 2.5 -5" rotation="0 10 0"
+				onClick="location.href='../html/lxtentbath.html'"
+	            event-set__enter="_event: mouseenter;visible:true;_target:#b;"
+	            event-set__leave="_event: mouseleave;visible:false;_target:#b;">
+	        </a-image>
+
+			<a-entity>
+				<a-entity camera look-controls="reverseMouseDrag: true" mouse-cursor rotation="0 50 0">
+					<a-cursor color="yellow" id="f"></a-cursor>
+					<a-animation begin="false" attribute="rotation" fill="forwards" easing="linear" dur="180000" to="0 -360 0" repeat="indefinite"></a-animation>
+
+					<a-image src="../img/hoverImg/lxtent.jpg"  position="0.7 0.34 -0.8" rotation="0 0 0" id="a" visible="false" width="0.8px" height="0.53px">
+					</a-image>
+					<a-image src="../img/hoverImg/lxtent2.jpg"  position="0.7 0.34 -0.8" rotation="0 0 0" id="b" visible="false" width="0.8px" height="0.53px">
+					</a-image>
+				</a-entity>
+	      	</a-entity>
+   		</a-scene>
+   		
+		<div class="uk-position-top-left uk-overlay uk-visible@s">
+			<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fvkirirom%2F&width=51&layout=box_count&action=like&size=small&show_faces=false&share=true&height=65&appId" width="51" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+		</div>
+		<div class="uk-position-top-right uk-overlay uk-hidden@s">
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fvkirirom%2F&width=51&layout=box_count&action=like&size=small&show_faces=false&share=true&height=65&appId" width="51" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+		</div>
+		<div class="uk-position-top-left uk-overlay uk-hidden@s">
+			<ul class="phone-social-icons" style="padding-left: 0;">
+				<li>
+					<a class="aa" href="https://www.facebook.com/vkirirom" target="_blank"><img src="../img/facebook.svg" alt="www.facebook.com" title="facebook" /></a>
+				</li>
+				<li>
+					<a class="aa" href="https://www.youtube.com/channel/UCCIu3JTn0s4UX5Kze5Hse0g" target="_blank"><img src="../img/youtube.svg" alt="www.youtube.com" title="youtube" /></a>
+				</li>
+				<li>
+					<a class="aa" href="https://www.instagram.com/vkirirom/" target="_blank"><img src="../img/instagram.svg" alt="www.instagram.com" title="instagram" /></a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Description -->
+		<div class="info uk-overlay uk-offcanvas-content">
+
+			<!-- Information -->
+			<button class="uk-button" type="button" uk-toggle="target: #offcanvas-overlay">
+				<img style="background:#282F68; width: 35px; height: 35px; padding: 5px;" src="../img/info.png" uk-toggle="target: #offcanvas-overlay">
+			</button>
+			<div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+		        <div class="uk-offcanvas-bar">
+		            <button class="uk-offcanvas-close" type="button" uk-close></button>
+		            <h3 style="text-align: center;">Luxury Tent</h3>
+	                <p>Stay in style and comfort in a high quality tent with the comfort of a hotel room. The tents come with a king size bed and en-suite bathroom. Rooms size is 5m x 4 m (20m2).Luxury Tent is a modern tent house which has a king size bed and nice bath room. Its size is 5m x 4m or 20m2.</p>
+		        </div>
+		    </div>
+
+		    <!-- Question Mark Button -->
+		    <button class="uk-button" type="button" uk-toggle="target:#questionMark">
+				<img style="background:#282F68; width: 35px; height: 35px; padding: 6px;" src="../img/questionMark.png" uk-toggle="target: #questionMark">
+			</button>
+			<div id="questionMark" uk-offcanvas="overlay: true">
+		        <div class="uk-offcanvas-bar">
+
+		            <button class="uk-offcanvas-close" type="button" uk-close></button>
+		            <div uk-slideshow>
+	                    <ul class="uk-slideshow-items edit-height">
+	                      	<!-- How to use -->
+	                      	<li>
+		                        <h3 style="text-align: center;">How to Use</h3>
+		                        <p>vKirirom360 provide lots of 360° photos</p>
+		                        <img style="margin: 10px; padding: 5px; " src="../img/mouse.png">
+		                        <p>Rotate the image using mouse or touch screen.</p>
+	                      	</li>
+	                      	<!-- Controls -->
+	                      	<li>
+		                        <h3 style="text-align: center;">Controls</h3>
+		                        <div class="controls">
+		                          	<div class="row">
+		                            	<div class="wrapper">
+		                              		<img class="control-icon" src="../img/searchwhite.png">
+		                              		<div class="control-data">Search the properties by typing their names</div>
+		                            	</div>
+		                          	</div>
+		                          	<div class="row">
+		                            	<div class="wrapper">
+			                              	<img class="control-icon" src="../img/info.png">
+			                              	<div class="control-data">Tell you the current property description</div>
+		                            	</div>
+		                          	</div>
+		                          	<div class="row">
+			                            <div class="wrapper">
+			                              <img class="control-icon" src="../img/questionMark.png">
+			                              <div class="control-data">Give you some guidelides </div>
+			                            </div>
+		                          	</div>
+		                          	<div class="row">
+			                            <div class="wrapper">
+			                              <img class="control-icon" src="../img/slideshow.png">
+			                              <div class="control-data">Enable automatic rotation mode
+			                              </div>
+			                            </div>
+		                          	</div>
+		                          	<div class="row">
+			                            <div class="wrapper">
+			                              <img class="control-icon" src="../img/vrglasses.png">
+			                              <div class="control-data">
+			                                Press it to enter the VR mode
+			                              </div>
+			                            </div>
+		                          	</div>  
+		                        </div>
+	                      	</li>
+	                      	<!-- <li>
+		                        <h3>Third Heading</h3>
+		                        <p>This is the paragraph</p>
+	                      	</li> -->
+	                    </ul>
+
+	                  	<div class="uk-position-bottom-center uk-position-small">
+	                    	<ul class="uk-dotnav">
+	                      		<li uk-slideshow-item="0"><a href="#"></a></li>
+	                      		<li uk-slideshow-item="1"><a href="#"></a></li>
+	                      		<!-- <li uk-slideshow-item="2"><a href="#"></a></li> -->
+	                    	</ul>
+	                  	</div>
+	                  
+	                  	<!-- Previous and Next -->
+	                  	<a class=" uk-position-bottom-left uk-position-small uk-hidden-hover" href="#"  uk-slideshow-item="previous"><span class="uk-margin-small-right uk-slidenav-small" uk-slidenav-previous></span></a>
+	                  	<a class="uk-slidenav-small uk-position-bottom-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"><span class="uk-margin-small-right"></span></a>
+              		</div>
+		        </div>
+		    </div>
+		
+		    <!-- Slideshow Button -->
+		    <button id="start-animation" class="uk-button" type="button">
+				<img style="background:#282F68; width: 35px; height: 35px; padding: 5px;" src="../img/slideshow.png">
+			</button>
+		</div>  
+	</div>
+	<script type="text/javascript">
+		var box = document.querySelector('a-camera');
+		var asence = document.querySelector('a-scene');
+		// window.onload(function() {
+		// 	console.log('Disable auto run');
+		// 	document.querySelector('a-animation').stop();
+		// });
+		asence.addEventListener('click', function () {
+  			console.log("test");
+  			document.querySelector('a-animation').stop();
+		});
+      	$(document).ready(function () {
+      		var btn = $('#start-animation');
+
+      		btn.on('click', function() {
+      			document.querySelector('a-animation').start();
+      		})
+
+      	});
+	</script>
+  </body>
+</html>

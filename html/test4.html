@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <title>multiplse pseudo scenes</title>
+  <script src="../js/aframe-master.min.js"></script>
+  <script src="../js/aframe-mouse-cursor-component.min.js"></script>
+  <script src="../js/look-controls.js"></script>
+</head>
+<body>
+
+  <a-scene>
+    <a-assets>
+      <img id="check" src="../img/check.svg">
+      <img id="pictureA" src="../img/hoverImg/boreyA-01.jpg" />
+      <img id="pictureB" src="../img/hoverImg/boreyA-02.jpg" />
+      <img id="rooma" src="../img/3dimg/BA-3d-Room1.jpg">
+
+      <script id="hoverobject" type="text/html">
+        <a-mixin id="hoverbox" class="hoverbox" material="color:#fff; opacity:.01;" geometry="primitive: plane; width:.7; height:1.5;" rotation="0 0 0" position="0 0 -.4"></a-mixin>
+
+        <a-entity class="hover">
+          <a-entity mixin="hoverbox"></a-entity>
+          <a-image src="{{ spot }}" >
+            <a-animation attribute="position" dur="300" to="0 0 .4" begin="hoveron"></a-animation>
+            <a-animation attribute="position" dur="300" to="0 0 0" begin="hoveroff"></a-animation>
+          </a-image>
+          <a-entity class="hoverimg" rotation="0 0 0" position="0 .3 .8" visible="true">
+            <a-image material="metalness:0.3; roughness:0.5; src:{{ src }}"></a-image>
+          </a-entity>
+        </a-entity>
+      </script>
+    </a-assets>
+
+    <a-sky src="#rooma"></a-sky>
+    <!-- <a-image src="#check" position="0 2 5" rotation="0 30 0"></a-image> -->
+
+    <a-entity position="0 0 0" rotation="0 180 0">
+      <a-entity camera="userHeight:1.6" look-controls wasd-controls>
+        <a-entity cursor="fuse:true, fuseTimeout: 50;" raycaster="far: 20; objects: .hoverbox"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="objects" layout="type: circle; radius: 1.4" position="0 .8 0" rotation="0 0 0">
+      <a-entity template="src: #hoverobject" data-spot="#check" data-src="#pictureA" position="0 2 5"></a-entity>
+      <a-entity template="src: #hoverobject" data-spot="#check" data-src="#pictureB" ></a-entity>
+    </a-entity> 
+
+    <!-- <a-entity camera="gyro-enabled: false" fps-look-controls mouse-cursor rotation="0 -110 0"></a-entity> -->
+
+    <!-- <a-entity id="scene1">
+      <a-box color="red" position="5 0 -5" onclick="nextScene()"> </a-box>
+    </a-entity>
+
+    <a-entity id="scene2" visible="false">
+      <a-box color="green" onclick="lastScene()" > </a-box>
+    </a-entity>
+
+    <a-entity id="scene3" visible="false">
+      <a-box color="blue" position="5 0 -1" onclick="firstScene()"> </a-box>
+    </a-entity>-->
+
+    
+
+  </a-scene>
+  <script type="text/javascript">
+    var scene = document.querySelector('a-scene');
+    if (scene.hasLoaded) {
+      run();
+    } else {
+      scene.addEventListener('loaded', run);
+    }
+
+    function run () {
+      var hoverEls = scene.querySelectorAll('.hover');
+      for (var i = 0; i < hoverEls.length; i++) {
+        var hoverEl = hoverEls[i];
+        hoverElBox = hoverEl.querySelector('a-entity');
+        hoverElBox.addEventListener('raycaster-intersected', function(evt) {
+          if (this.hoveron !== true) {
+            var parent = evt.target.parentNode;
+            var next = evt.target.nextElementSibling;
+            next.emit('hoveron');
+            parent.querySelector('.hoverimg').setAttribute('visible', true);
+            this.hoveron = true;
+          }
+        }, true);
+        hoverElBox.addEventListener('raycaster-intersected-cleared', function(evt) {
+          var parent = evt.target.parentNode;
+          var next = evt.target.nextElementSibling;
+          next.emit('hoveroff');
+          parent.querySelector('.hoverimg').setAttribute('visible', false);
+          this.hoveron = false;
+        }, true);
+      }
+    }
+    </script>
+
+  <!-- <script type="text/javascript">
+
+    function nextScene() {
+      document.getElementById('scene1').setAttribute('visible', 'false')
+      document.getElementById('scene2').setAttribute('visible', 'true')
+      document.getElementById('scene3').setAttribute('visible', 'false')
+    }
+    function lastScene() {
+      document.getElementById('scene1').setAttribute('visible', 'false')
+      document.getElementById('scene2').setAttribute('visible', 'false')
+      document.getElementById('scene3').setAttribute('visible', 'true')
+
+    }
+    function firstScene() {
+      document.getElementById('scene1').setAttribute('visible', 'true')
+      document.getElementById('scene2').setAttribute('visible', 'false')
+      document.getElementById('scene3').setAttribute('visible', 'false')
+
+    }
+  </script> -->
+
+</body>
+</html>

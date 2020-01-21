@@ -1,0 +1,93 @@
+<html>
+  	<head>
+		<title>Inside Page</title>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/uikit.min.css" />
+        <script src="../js/uikit.min.js"></script>
+        <script src="../js/uikit-icons.min.js"></script>
+
+	    <script src="../js/aframe-master.js"></script>
+	    <script src="../js/aframe-master.min.js"></script>
+	    <script src="../js/build.js"></script>
+	    <script src="../js/aframe-mouse-cursor-component.min.js"></script>
+	    <script src="../js/aframe-touch-rotation-controls.min.js"></script>
+	   
+		<link href="../css/mfb.css" rel="stylesheet">
+	    <script src="../js/mfb.js"></script>
+		<script src="../js/fbplugin.js"></script>
+		<link href="../css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
+
+
+	</head>
+	<body>
+
+		<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fvkirirom%2F&width=51&layout=box_count&action=like&size=small&show_faces=false&share=true&height=65&appId" width="51" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+		<img class="uk-visible@s" src="../img/vKirirom.svg">
+		<img src="../img/vKirirom.svg">
+		<img src="../img/vKirirom.svg">
+		<img src="../img/vKirirom.svg">
+		<div>
+			<img style="background: blue; width: 50px; height: 50px;"" src="../img/i.png">
+		</div>
+		<div class="uk-offcanvas-content">
+
+		    <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">
+		    	<img style="background: blue; width: 50px; height: 50px;"" src="../img/i.png">
+		    </button>
+		    <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">
+		    	<img style="background: blue; width: 50px; height: 50px;"" src="../img/i.png">
+		    </button>
+
+		    <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+		        <div class="uk-offcanvas-bar">
+
+		            <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+		            <h3>Title</h3>
+
+		            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+		        </div>
+		    </div>
+
+		</div>
+		
+		<ul class="phone-social-icons">
+					<li class="uk-visible@m">
+						<a class="aa" href="https://www.facebook.com/vkirirom" target="_blank"><img src="../img/facebook.svg" alt="www.facebook.com" title="facebook" /></a>
+					</li>
+						<li>
+						<a class="aa" href="https://www.youtube.com/channel/UCCIu3JTn0s4UX5Kze5Hse0g" target="_blank"><img src="../img/youtube.svg" alt="www.youtube.com" title="youtube" /></a>
+						</li>
+					<li>
+						<a class="aa" href="https://www.instagram.com/vkirirom/" target="_blank"><img src="../img/instagram.svg" alt="www.instagram.com" title="instagram" /></a>
+					</li>
+					<li>
+						<a class="aa" href="https://vkirirom.live" target="_blank"><img src="../img/blog-icon.png" alt="www.vkirirom.live" title="blog" /></a>
+					</li>
+
+		</ul>
+		<a-scene>
+			<a-entity camera universal-controls="movementControls: hmd; rotationControls: touch-rotation"></a-entity>
+			<p style="text-align: center;">Hello World</p>
+			<a-entity geometry="primitive: plane; width: auto; height: auto" material="color: #eee" text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; ">
+        	</a-entity>
+
+        	<a-entity position="0 0.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #eee">
+				  <a-image src="../img/Artboard2.png"></a-image>
+				  <a-text color:blue; align: center; value: [CENTER ALIGNED]; width: 2; >Artboard2</a-text>
+
+        	</a-entity>
+
+	        <a-sky src="https://aframe.io/aframe/examples/boilerplate/panorama/puydesancy.jpg">
+		      	<a-animation attribute="rotation" fill="forwards" easing="linear" dur="180000" to="0 360 0" repeat="indefinite"></a-animation>
+		    </a-sky>
+		</a-scene>
+
+		
+
+
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+  	<head>
+		<title>Inside Page</title>
+	    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+		<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+		<script src="../js/aframe-mouse-cursor-component.min.js"></script>
+    </head>
+  	<body>
+  		<a-scene>
+  			<a-assets>
+		        <img id="rooma" src="../img/3dimg/BA-3d-Room1.jpg">
+		        <img id="check" src="../img/check.svg">
+		    </a-assets>
+  			<a-image src="#check" position="1 0.75 -3" rotation="0 30 0"
+	        	onClick="location.href='../html/bainsidea.html'"
+	        	event-set__enter="_event: mouseenter;visible:true;_target:#a;"
+	        	event-set__leave="_event: mouseleave;visible:false;_target:#a;">
+	        	<a-image id="a" src="../img/hoverImg/boreyA-01.jpg" position="0.7 0.34 -0.8" 
+	        		rotation="0 -60 0" visible="false"  geometry="width: 5; height:3">
+	          	</a-image>
+	      	</a-image>
+	      	
+		    <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"
+		                event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+		                event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+		      	<a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" 		visible="false" position="0 -0.55 0.55" geometry="primitive: plane; width: 1.75"
+		      		material="color: #333">
+		      	</a-text>
+		    </a-cylinder> -->
+		    <a-entity camera look-controls="reverseMouseDrag: true" mouse-cursor rotation="0 50 0">
+		        <a-cursor color="yellow" id="z"></a-cursor>
+		    </a-entity>
+		</a-scene>
+
+  	
+  </body>
+</html>

@@ -1,0 +1,91 @@
+{
+	"propert":[
+		{
+			"property_name": "Borey V",
+			"room_id": "001",
+			"coord":{
+				"lat": "14124.73436",
+				"lng": "2352352.4754"
+			},
+			"img_src": "../img/BA-3D-Inside1.jpg"
+		},
+		{
+			"property_name": "Borey V",
+			"room_id": "001",
+			"coord":{
+				"lat": "14124.73436",
+				"lng": "2352352.4754"
+			},
+			"img_src": "../img/BA-3D-Inside1.jpg"
+		},
+		{
+			"property_name": "Borey V",
+			"room_id": "001",
+			"coord":{
+				"lat": "14124.73436",
+				"lng": "2352352.4754"
+			},
+			"img_src": "../img/BA-3D-Inside1.jpg"
+		},
+		{
+			"property_name": "Borey V",
+			"room_id": "001",
+			"coord":{
+				"lat": "14124.73436",
+				"lng": "2352352.4754"
+			},
+			"img_src": "../img/BA-3D-Inside1.jpg"
+		},
+		{
+			"property_name": "Borey V",
+			"room_id": "001",
+			"coord":{
+				"lat": "14124.73436",
+				"lng": "2352352.4754"
+			},
+			"img_src": "../img/BA-3D-Inside1.jpg"
+		},
+	]
+	{
+    "objectId":"001", 
+    "data":{
+      "name":"Villa Suite",
+      "image": "../img/searchImg/boreyA.jpg",
+      "link":"baoutside.html",
+      "location":"In the front",
+      "pointerImage":{
+        "src": "../img/check.svg",
+        "id": "check",
+      },
+      "propertyImages":[
+        {
+          "src": "../img/3dimg/bungalow.jpg",
+          "id": "sky",
+        }
+      ],
+      "roomDetails":{
+        "pointers":[
+          {
+            "src": "#check",
+            "position": "-5 1.5 -5",
+            "rotation": "0 50 0",
+            "onClick": "location.href='../html/index.php?roomid=002'",
+            "eventEnter": "_event: mouseenter;visible:true;_target:#a;",
+            "eventLeave": "_event: mouseleave;visible:false;_target:#a;"
+          }
+        ],
+        "popoverImages":[
+          {
+            "src": "",
+            "position": "",
+            "rotation": "",
+            "id": "",
+            "visible": "",
+            "width": "",
+            "height": ""
+          }
+        ]
+      }
+    }
+  }
+}
